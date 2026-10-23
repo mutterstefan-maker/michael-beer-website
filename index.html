@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Beer – Anhängerverleih & Holzhandel Langenbach</title>
+  <meta name="description" content="Anhänger mieten & Brennholz bestellen in Langenbach. Einfache Online-Buchung, faire Preise, zuverlässige Lieferung." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="index.html" class="nav__logo">
+        <span class="logo-icon">🌲</span>
+        <span>Michael Beer</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#anhaenger">Anhängerverleih</a>
+        <a href="#holz">Holzhandel</a>
+        <a href="#ablauf">So funktioniert's</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a href="#buchen" class="btn btn--primary nav__cta">Jetzt buchen</a>
+      <button class="nav__burger" id="burger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#anhaenger">Anhängerverleih</a>
+      <a href="#holz">Holzhandel</a>
+      <a href="#ablauf">So funktioniert's</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#buchen" class="btn btn--primary">Jetzt buchen</a>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <div class="hero__particle" style="--x:10%;--y:20%;--s:1.2"></div>
+      <div class="hero__particle" style="--x:80%;--y:60%;--s:0.8"></div>
+      <div class="hero__particle" style="--x:50%;--y:80%;--s:1.5"></div>
+      <div class="hero__particle" style="--x:90%;--y:15%;--s:0.6"></div>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__badge">📍 Langenbach, Bayern</div>
+      <h1 class="hero__title">
+        Anhänger mieten.<br />
+        <span class="gradient-text">Holz bestellen.</span><br />
+        Einfach gemacht.
+      </h1>
+      <p class="hero__sub">Tagesbasierte Anhängervermietung und Brennholz-Lieferservice direkt vor deine Tür – bequem online buchen.</p>
+      <div class="hero__actions">
+        <a href="#anhaenger" class="btn btn--primary btn--lg">Anhänger buchen</a>
+        <a href="#holz" class="btn btn--outline btn--lg">Holz bestellen</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><strong>3+</strong><span>Anhänger verfügbar</span></div>
+        <div class="stat"><strong>4</strong><span>Holzarten</span></div>
+        <div class="stat"><strong>24h</strong><span>Buchungsbestätigung</span></div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ========== DIENSTE ÜBERBLICK ========== -->
+  <section class="services container" data-aos="fade-up">
+    <div class="services__grid">
+      <div class="service-card service-card--trailer" data-aos="fade-right" data-aos-delay="100">
+        <div class="service-card__icon">🚛</div>
+        <h2>Anhängerverleih</h2>
+        <p>Verschiedene Anhänger für jeden Bedarf – tagesweise mieten, online buchen, unkompliziert abholen.</p>
+        <a href="#anhaenger" class="arrow-link">Mehr erfahren →</a>
+      </div>
+      <div class="service-card service-card--wood" data-aos="fade-left" data-aos-delay="200">
+        <div class="service-card__icon">🪵</div>
+        <h2>Holzhandel & Lieferung</h2>
+        <p>Qualitätsholz in verschiedenen Arten und Mengen – bequem bestellen und direkt zu dir liefern lassen.</p>
+        <a href="#holz" class="arrow-link">Mehr erfahren →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ANHÄNGER ========== -->
+  <section class="section anhaenger" id="anhaenger">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__tag">Anhängerverleih</span>
+        <h2>Die richtigen Anhänger für jeden Job</h2>
+        <p>Wähle deinen Anhänger, prüfe die Verfügbarkeit und buche direkt online.</p>
+      </div>
+
+      <div class="trailer-grid">
+        <!-- Trailer Card 1 -->
+        <div class="trailer-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="trailer-card__img trailer-card__img--placeholder">
+            <span class="placeholder-icon">🚛</span>
+            <div class="trailer-card__badge">Verfügbar</div>
+          </div>
+          <div class="trailer-card__body">
+            <h3>Anhänger 1 – [Name kommt noch]</h3>
+            <div class="trailer-specs">
+              <div class="spec"><span class="spec__label">Nutzlast</span><strong>– t</strong></div>
+              <div class="spec"><span class="spec__label">Ladefläche</span><strong>– m²</strong></div>
+              <div class="spec"><span class="spec__label">Zulassung</span><strong>–</strong></div>
+              <div class="spec"><span class="spec__label">Führerschein</span><strong>–</strong></div>
+            </div>
+            <div class="trailer-card__price">ab <strong>– €</strong> / Tag</div>
+            <a href="#buchen" class="btn btn--primary btn--full">Jetzt buchen</a>
+          </div>
+        </div>
+
+        <!-- Trailer Card 2 -->
+        <div class="trailer-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="trailer-card__img trailer-card__img--placeholder">
+            <span class="placeholder-icon">🚚</span>
+            <div class="trailer-card__badge">Verfügbar</div>
+          </div>
+          <div class="trailer-card__body">
+            <h3>Anhänger 2 – [Name kommt noch]</h3>
+            <div class="trailer-specs">
+              <div class="spec"><span class="spec__label">Nutzlast</span><strong>– t</strong></div>
+              <div class="spec"><span class="spec__label">Ladefläche</span><strong>– m²</strong></div>
+              <div class="spec"><span class="spec__label">Zulassung</span><strong>–</strong></div>
+              <div class="spec"><span class="spec__label">Führerschein</span><strong>–</strong></div>
+            </div>
+            <div class="trailer-card__price">ab <strong>– €</strong> / Tag</div>
+            <a href="#buchen" class="btn btn--primary btn--full">Jetzt buchen</a>
+          </div>
+        </div>
+
+        <!-- Trailer Card 3 -->
+        <div class="trailer-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="trailer-card__img trailer-card__img--placeholder">
+            <span class="placeholder-icon">🏗️</span>
+            <div class="trailer-card__badge trailer-card__badge--busy">Auf Anfrage</div>
+          </div>
+          <div class="trailer-card__body">
+            <h3>Anhänger 3 – [Name kommt noch]</h3>
+            <div class="trailer-specs">
+              <div class="spec"><span class="spec__label">Nutzlast</span><strong>– t</strong></div>
+              <div class="spec"><span class="spec__label">Ladefläche</span><strong>– m²</strong></div>
+              <div class="spec"><span class="spec__label">Zulassung</span><strong>–</strong></div>
+              <div class="spec"><span class="spec__label">Führerschein</span><strong>–</strong></div>
+            </div>
+            <div class="trailer-card__price">ab <strong>– €</strong> / Tag</div>
+            <a href="#buchen" class="btn btn--outline btn--full">Anfragen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BUCHUNGSBEREICH ========== -->
+  <section class="section booking-section" id="buchen">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__tag">Buchung</span>
+        <h2>Anhänger buchen</h2>
+        <p>Wähle Anhänger und Datum – du erhältst innerhalb von 24h eine Bestätigung.</p>
+      </div>
+      <div class="booking-widget" data-aos="fade-up" data-aos-delay="100">
+        <form class="booking-form" id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="trailer-select">Anhänger wählen</label>
+              <select id="trailer-select" name="trailer" required>
+                <option value="">– bitte wählen –</option>
+                <option value="1">Anhänger 1</option>
+                <option value="2">Anhänger 2</option>
+                <option value="3">Anhänger 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row form-row--2">
+            <div class="form-group">
+              <label for="date-from">Von (Datum)</label>
+              <input type="date" id="date-from" name="date_from" required />
+            </div>
+            <div class="form-group">
+              <label for="date-to">Bis (Datum)</label>
+              <input type="date" id="date-to" name="date_to" required />
+            </div>
+          </div>
+          <div class="form-row form-row--2">
+            <div class="form-group">
+              <label for="book-name">Vor- & Nachname</label>
+              <input type="text" id="book-name" name="name" placeholder="Max Mustermann" required />
+            </div>
+            <div class="form-group">
+              <label for="book-phone">Telefon</label>
+              <input type="tel" id="book-phone" name="phone" placeholder="+49 …" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="book-email">E-Mail</label>
+            <input type="email" id="book-email" name="email" placeholder="name@example.de" required />
+          </div>
+          <div class="form-group">
+            <label for="book-note">Anmerkungen (optional)</label>
+            <textarea id="book-note" name="note" rows="3" placeholder="Sonstige Hinweise…"></textarea>
+          </div>
+          <div class="booking-summary" id="bookingSummary" style="display:none">
+            <strong>Übersicht:</strong>
+            <span id="summaryText"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--full">
+            Buchungsanfrage senden ✓
+          </button>
+          <p class="form-note">* Manuelle Freigabe durch Michael Beer – du erhältst eine Bestätigung per E-Mail/Telefon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOLZHANDEL ========== -->
+  <section class="section wood-section" id="holz">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__tag">Holzhandel</span>
+        <h2>Qualitätsholz – direkt geliefert</h2>
+        <p>Wähle deine Holzart und Menge. Das Holz wird bei dir abgekippt – kein Einräumen, kein Stress.</p>
+      </div>
+
+      <div class="wood-grid">
+        <!-- Wood Card 1 -->
+        <div class="wood-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="wood-card__img">
+            <span class="wood-emoji">🪵</span>
+          </div>
+          <div class="wood-card__body">
+            <h3>Buche</h3>
+            <p>Hoher Brennwert, lange Brenndauer – ideal für Kaminofen und Heizkamin.</p>
+            <div class="wood-meta">
+              <span>🔥 Sehr hoher Heizwert</span>
+              <span>⏱ Lange Brenndauer</span>
+            </div>
+            <div class="wood-price">Preis auf Anfrage</div>
+            <a href="#holz-bestellen" class="btn btn--wood btn--full">Bestellen</a>
+          </div>
+        </div>
+
+        <!-- Wood Card 2 -->
+        <div class="wood-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="wood-card__img">
+            <span class="wood-emoji">🌲</span>
+          </div>
+          <div class="wood-card__body">
+            <h3>Fichte</h3>
+            <p>Leicht entzündlich, ideal zum Anheizen. Gutes Preis-Leistungs-Verhältnis.</p>
+            <div class="wood-meta">
+              <span>🔥 Mittlerer Heizwert</span>
+              <span>⚡ Schnell entzündlich</span>
+            </div>
+            <div class="wood-price">Preis auf Anfrage</div>
+            <a href="#holz-bestellen" class="btn btn--wood btn--full">Bestellen</a>
+          </div>
+        </div>
+
+        <!-- Wood Card 3 -->
+        <div class="wood-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="wood-card__img">
+            <span class="wood-emoji">🌳</span>
+          </div>
+          <div class="wood-card__body">
+            <h3>Eiche</h3>
+            <p>Sehr dichtes Holz, extrem langer Abbrand – perfekt für die Nacht.</p>
+            <div class="wood-meta">
+              <span>🔥 Höchster Heizwert</span>
+              <span>🌙 Nachtholz</span>
+            </div>
+            <div class="wood-price">Preis auf Anfrage</div>
+            <a href="#holz-bestellen" class="btn btn--wood btn--full">Bestellen</a>
+          </div>
+        </div>
+
+        <!-- Wood Card 4 -->
+        <div class="wood-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="wood-card__img">
+            <span class="wood-emoji">🪨</span>
+          </div>
+          <div class="wood-card__body">
+            <h3>Birke</h3>
+            <p>Schöne Flammen, angenehmer Geruch – beliebt fürs Kaminfeuer im Wohnzimmer.</p>
+            <div class="wood-meta">
+              <span>🔥 Hoher Heizwert</span>
+              <span>✨ Schöne Flammen</span>
+            </div>
+            <div class="wood-price">Preis auf Anfrage</div>
+            <a href="#holz-bestellen" class="btn btn--wood btn--full">Bestellen</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Holz Bestellung -->
+      <div class="wood-order" id="holz-bestellen" data-aos="fade-up">
+        <h3>Holz bestellen</h3>
+        <form class="booking-form" id="woodForm">
+          <div class="form-row form-row--2">
+            <div class="form-group">
+              <label for="wood-type">Holzart</label>
+              <select id="wood-type" name="wood_type" required>
+                <option value="">– bitte wählen –</option>
+                <option value="buche">Buche</option>
+                <option value="fichte">Fichte</option>
+                <option value="eiche">Eiche</option>
+                <option value="birke">Birke</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="wood-amount">Menge</label>
+              <select id="wood-amount" name="amount" required>
+                <option value="">– bitte wählen –</option>
+                <option value="1ster">1 Ster</option>
+                <option value="2ster">2 Ster</option>
+                <option value="3ster">3 Ster</option>
+                <option value="mehr">Mehr (bitte angeben)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row form-row--2">
+            <div class="form-group">
+              <label for="wood-name">Name</label>
+              <input type="text" id="wood-name" name="name" placeholder="Max Mustermann" required />
+            </div>
+            <div class="form-group">
+              <label for="wood-phone">Telefon</label>
+              <input type="tel" id="wood-phone" name="phone" placeholder="+49 …" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="wood-address">Lieferadresse</label>
+            <input type="text" id="wood-address" name="address" placeholder="Straße, PLZ Ort" required />
+          </div>
+          <div class="form-group">
+            <label for="wood-note">Anmerkungen</label>
+            <textarea id="wood-note" name="note" rows="2" placeholder="z.B. Liefertermin, Zufahrt…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--wood btn--lg btn--full">
+            Holz anfragen 🪵
+          </button>
+          <p class="form-note">* Das Holz wird abgekippt (kein Einräumen). Preis & Liefertermin nach Rückmeldung.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SO FUNKTIONIERT'S ========== -->
+  <section class="section how-section" id="ablauf">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__tag">Ablauf</span>
+        <h2>So einfach geht's</h2>
+      </div>
+      <div class="steps">
+        <div class="step" data-aos="fade-up" data-aos-delay="100">
+          <div class="step__num">01</div>
+          <div class="step__icon">📱</div>
+          <h3>Online buchen</h3>
+          <p>Anhänger oder Holzart auswählen, Formular ausfüllen – fertig.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step" data-aos="fade-up" data-aos-delay="200">
+          <div class="step__num">02</div>
+          <div class="step__icon">✅</div>
+          <h3>Bestätigung</h3>
+          <p>Michael bestätigt deine Anfrage manuell – du bekommst eine Rückmeldung.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step" data-aos="fade-up" data-aos-delay="300">
+          <div class="step__num">03</div>
+          <div class="step__icon">🚛</div>
+          <h3>Abholen / Lieferung</h3>
+          <p>Anhänger direkt vor Ort abholen oder Holz bequem liefern lassen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== USPs ========== -->
+  <section class="section usp-section">
+    <div class="container">
+      <div class="usp-grid">
+        <div class="usp" data-aos="fade-up" data-aos-delay="100">
+          <span class="usp__icon">📅</span>
+          <h4>Tagesweise mieten</h4>
+          <p>Flexibel nach Bedarf, kein Stunden-Stress.</p>
+        </div>
+        <div class="usp" data-aos="fade-up" data-aos-delay="200">
+          <span class="usp__icon">🏡</span>
+          <h4>Lieferung vor Ort</h4>
+          <p>Holz wird direkt abgekippt – kein Eigenaufwand.</p>
+        </div>
+        <div class="usp" data-aos="fade-up" data-aos-delay="300">
+          <span class="usp__icon">📞</span>
+          <h4>Persönlicher Kontakt</h4>
+          <p>Kein Call-Center – direkt mit Michael.</p>
+        </div>
+        <div class="usp" data-aos="fade-up" data-aos-delay="400">
+          <span class="usp__icon">🌿</span>
+          <h4>Regional & fair</h4>
+          <p>Aus der Region, für die Region.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KONTAKT ========== -->
+  <section class="section contact-section" id="kontakt">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__tag">Kontakt</span>
+        <h2>Fragen? Meld dich!</h2>
+      </div>
+      <div class="contact-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Michael Beer</strong><br />
+              Langenbach, Bayern<br />
+              <em>(Adresse folgt)</em>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Telefon</strong><br />
+              <a href="tel:+49">+49 … (folgt)</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <strong>E-Mail</strong><br />
+              <a href="mailto:info@example.de">info@… (folgt)</a>
+            </div>
+          </div>
+        </div>
+        <form class="booking-form contact-form" id="contactForm" data-aos="fade-left">
+          <div class="form-row form-row--2">
+            <div class="form-group">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" name="name" placeholder="Dein Name" required />
+            </div>
+            <div class="form-group">
+              <label for="c-email">E-Mail</label>
+              <input type="email" id="c-email" name="email" placeholder="deine@mail.de" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-msg">Nachricht</label>
+            <textarea id="c-msg" name="message" rows="4" placeholder="Deine Frage oder Anfrage…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-icon">🌲</span>
+        <strong>Michael Beer</strong>
+        <p>Anhängerverleih & Holzhandel · Langenbach</p>
+      </div>
+      <div class="footer__links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer__copy">
+      <p>© 2026 Michael Beer · Webseite by <a href="https://chefblick.de" target="_blank">ChefBlick</a></p>
+    </div>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
