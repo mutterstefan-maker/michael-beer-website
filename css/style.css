@@ -125,7 +125,13 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   font-size: 1.25rem;
   color: var(--white);
 }
-.logo-icon { font-size: 1.6rem; }
+.icon {
+  width: 1em; height: 1em;
+  fill: none; stroke: currentColor; stroke-width: 1.75;
+  stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0; vertical-align: -0.125em;
+}
+.logo-icon { font-size: 1.6rem; display: flex; color: var(--green-light); }
 .nav__links {
   display: flex;
   gap: 28px;
@@ -271,7 +277,14 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   background: linear-gradient(135deg, #2c1810, #4a2c1a);
   color: var(--white);
 }
-.service-card__icon { font-size: 3rem; margin-bottom: 20px; }
+.service-card__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px; margin-bottom: 20px;
+  font-size: 1.9rem; color: var(--green-light);
+  border: 1px solid rgba(255,255,255,.15); border-radius: 16px;
+  background: rgba(255,255,255,.05);
+}
+.service-card--wood .service-card__icon { color: var(--amber-light); }
 .service-card h2 { margin-bottom: 12px; }
 .service-card p { color: rgba(255,255,255,.75); line-height: 1.65; margin-bottom: 24px; }
 .arrow-link { color: var(--green-light); font-weight: 600; transition: gap var(--transition); }
@@ -320,7 +333,8 @@ h3 { font-size: 1.3rem; font-weight: 600; }
 .trailer-card__img--placeholder {
   background: linear-gradient(135deg, var(--dark2), #152818);
 }
-.placeholder-icon { font-size: 4rem; }
+.placeholder-icon { font-size: 4rem; display: flex; color: rgba(255,255,255,.25); }
+.placeholder-icon .icon { stroke-width: 1.25; }
 .trailer-card__badge {
   position: absolute;
   top: 14px; right: 14px;
@@ -404,6 +418,62 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   color: var(--green-light);
 }
 
+/* ---- KALENDER ---- */
+.form-label { font-size: .85rem; font-weight: 600; color: rgba(255,255,255,.75); }
+.calendar {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  padding: 18px;
+}
+.calendar__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.calendar__month { color: var(--white); font-family: 'Outfit', sans-serif; font-size: 1.1rem; text-transform: capitalize; }
+.calendar__nav {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; font-size: 1.2rem;
+  background: rgba(255,255,255,.07); color: var(--white);
+  border: 1px solid rgba(255,255,255,.12); border-radius: 10px;
+  cursor: pointer; transition: background var(--transition);
+}
+.calendar__nav:hover:not(:disabled) { background: rgba(82,183,136,.25); }
+.calendar__nav:disabled { opacity: .3; cursor: default; }
+.calendar__weekdays,
+.calendar__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.calendar__weekdays span {
+  text-align: center; font-size: .75rem; font-weight: 600;
+  color: rgba(255,255,255,.45); padding-bottom: 6px;
+}
+.calendar__day {
+  height: 44px;
+  background: transparent; color: var(--white);
+  border: 1px solid transparent; border-radius: 10px;
+  font: 500 .95rem 'Inter', sans-serif;
+  cursor: pointer; transition: background var(--transition), border-color var(--transition);
+}
+.calendar__day:hover:not(:disabled) { background: rgba(82,183,136,.18); border-color: rgba(82,183,136,.4); }
+.calendar__day:focus-visible { outline: 2px solid var(--green-light); outline-offset: 1px; }
+.calendar__day:disabled { color: rgba(255,255,255,.22); cursor: not-allowed; }
+.calendar__day.is-today { border-color: rgba(255,255,255,.3); }
+.calendar__day.is-booked {
+  color: rgba(255,255,255,.35);
+  background: repeating-linear-gradient(135deg, rgba(220,80,60,.2) 0 4px, transparent 4px 8px);
+  text-decoration: line-through;
+}
+.calendar__day.is-range { background: rgba(82,183,136,.22); border-radius: 6px; }
+.calendar__day.is-start,
+.calendar__day.is-end { background: var(--green-light); color: var(--dark); font-weight: 700; }
+.calendar__legend {
+  display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px;
+  font-size: .78rem; color: rgba(255,255,255,.55);
+}
+.calendar__legend span { display: flex; align-items: center; gap: 6px; }
+.calendar__dot { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
+.calendar__dot--free     { border: 1px solid rgba(255,255,255,.35); }
+.calendar__dot--booked   { background: repeating-linear-gradient(135deg, rgba(220,80,60,.7) 0 2px, transparent 2px 4px); }
+.calendar__dot--selected { background: var(--green-light); }
+.booking-section .calendar__hint { margin-top: 10px; font-size: .85rem; color: rgba(255,255,255,.6); }
+.booking-section .calendar__hint.is-error { color: #f08a7a; }
+
 /* ---- HOLZ ---- */
 .wood-section { background: #faf8f5; }
 .wood-section .section__tag { background: #fff3e0; color: #b8860b; }
@@ -428,12 +498,21 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   align-items: center;
   justify-content: center;
 }
-.wood-emoji { font-size: 3.5rem; }
+.wood-disc { width: 96px; height: 96px; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); }
+.wood-disc__bark  { fill: var(--bark); }
+.wood-disc__face  { fill: var(--face); }
+.wood-disc__rings { fill: none; stroke: var(--ring); stroke-width: 1.4; opacity: .7; }
+.wood-disc__crack { fill: none; stroke: var(--ring); stroke-width: 1.6; stroke-linecap: round; opacity: .8; }
+.wood-disc--buche  { --bark: #6E6A63; --face: #D9A877; --ring: #A8714A; }
+.wood-disc--fichte { --bark: #5A3B28; --face: #EBD3A3; --ring: #C09456; }
+.wood-disc--eiche  { --bark: #3E2C20; --face: #C4935F; --ring: #7E5631; }
+.wood-disc--birke  { --bark: #E6E1D6; --face: #F1E3C6; --ring: #CDB487; }
 .wood-card__body { padding: 20px; }
 .wood-card__body h3 { margin-bottom: 8px; }
 .wood-card__body p { font-size: .88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 12px; }
 .wood-meta { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
-.wood-meta span { font-size: .78rem; color: var(--text-muted); }
+.wood-meta span { font-size: .78rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+.wood-meta .icon { color: var(--amber); font-size: .95rem; }
 .wood-price { font-size: .9rem; color: var(--amber); font-weight: 600; margin-bottom: 14px; }
 
 .wood-order {
@@ -494,7 +573,7 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   line-height: 1;
   margin-bottom: 8px;
 }
-.step__icon { font-size: 2.2rem; margin-bottom: 14px; }
+.step__icon { font-size: 2rem; margin-bottom: 14px; color: var(--green-light); display: flex; }
 .step h3 { color: var(--white); margin-bottom: 10px; }
 .step p { color: rgba(255,255,255,.6); font-size: .9rem; line-height: 1.6; }
 .step__arrow { font-size: 2rem; color: rgba(82,183,136,.4); }
@@ -514,7 +593,12 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   transition: var(--transition);
 }
 .usp:hover { border-color: var(--green-light); box-shadow: var(--shadow); }
-.usp__icon { font-size: 2.5rem; display: block; margin-bottom: 14px; }
+.usp__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 56px; height: 56px; margin-bottom: 14px;
+  font-size: 1.6rem; color: var(--green);
+  background: var(--gray); border-radius: 14px;
+}
 .usp h4 { margin-bottom: 8px; }
 .usp p  { color: var(--text-muted); font-size: .9rem; line-height: 1.55; }
 
@@ -528,7 +612,7 @@ h3 { font-size: 1.3rem; font-weight: 600; }
 }
 .contact-info { display: flex; flex-direction: column; gap: 28px; }
 .contact-item { display: flex; gap: 16px; align-items: flex-start; }
-.contact-icon { font-size: 1.5rem; margin-top: 2px; }
+.contact-icon { font-size: 1.4rem; margin-top: 2px; display: flex; color: var(--green); }
 .contact-item strong { display: block; margin-bottom: 4px; }
 .contact-item a { color: var(--green); }
 /* light-mode form overrides for contact */
@@ -590,6 +674,8 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   .steps          { flex-direction: column; }
   .step__arrow    { transform: rotate(90deg); }
   .booking-widget { padding: 24px; }
+  .calendar       { padding: 12px; }
+  .calendar__day  { height: 40px; font-size: .85rem; }
   .wood-order     { padding: 24px; }
 }
 
@@ -605,5 +691,5 @@ h3 { font-size: 1.3rem; font-weight: 600; }
   color: var(--green-light);
   display: none;
 }
-.form-success .success-icon { font-size: 3rem; margin-bottom: 12px; }
+.form-success .success-icon { font-size: 3rem; margin-bottom: 12px; display: flex; justify-content: center; }
 .form-success h4 { color: var(--white); margin-bottom: 8px; }
