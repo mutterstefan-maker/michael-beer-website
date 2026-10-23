@@ -99,20 +99,34 @@
       <div class="trailer-grid">
         <!-- Trailer Card 1 -->
         <div class="trailer-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="trailer-card__img trailer-card__img--placeholder">
-            <span class="placeholder-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="15" height="9" rx="1"/><path d="M17 12.5h5"/><circle cx="9.5" cy="17.5" r="2"/></svg></span>
+          <div class="trailer-card__img">
+            <img class="trailer-card__photo" src="img/anhaenger/3-seitenkipper-seite.avif" alt="3-Seitenkipper mit Gitteraufsatz, Seitenansicht" loading="lazy" />
             <div class="trailer-card__badge">Verfügbar</div>
+            <div class="trailer-card__thumbs">
+              <button type="button" class="trailer-card__thumb is-active" data-src="img/anhaenger/3-seitenkipper-seite.avif" data-alt="3-Seitenkipper mit Gitteraufsatz, Seitenansicht" aria-label="Seitenansicht zeigen">
+                <img src="img/anhaenger/3-seitenkipper-seite.avif" alt="" loading="lazy" />
+              </button>
+              <button type="button" class="trailer-card__thumb" data-src="img/anhaenger/3-seitenkipper-vorne.avif" data-alt="3-Seitenkipper mit Gitteraufsatz, Ansicht von vorne" aria-label="Ansicht von vorne zeigen">
+                <img src="img/anhaenger/3-seitenkipper-vorne.avif" alt="" loading="lazy" />
+              </button>
+            </div>
           </div>
           <div class="trailer-card__body">
-            <h3>Anhänger 1 – [Name kommt noch]</h3>
+            <h3>3-Seitenkipper 3,5 t</h3>
+            <p class="trailer-card__desc">Robuster Kipper für Schüttgut, Erde, Kies, Sand, Grünabfall und Baustellenmaterial – kippt nach rechts, links und hinten.</p>
             <div class="trailer-specs">
-              <div class="spec"><span class="spec__label">Nutzlast</span><strong>– t</strong></div>
-              <div class="spec"><span class="spec__label">Ladefläche</span><strong>– m²</strong></div>
-              <div class="spec"><span class="spec__label">Zulassung</span><strong>–</strong></div>
-              <div class="spec"><span class="spec__label">Führerschein</span><strong>–</strong></div>
+              <div class="spec"><span class="spec__label">Gesamtgewicht</span><strong>3,5 t</strong></div>
+              <div class="spec"><span class="spec__label">Nutzlast</span><strong>2,5 t</strong></div>
+              <div class="spec"><span class="spec__label">Ladefläche</span><strong>4 × 2 m</strong></div>
+              <div class="spec"><span class="spec__label">Höhe mit Gitter</span><strong>0,95 m</strong></div>
             </div>
-            <div class="trailer-card__price">ab <strong>– €</strong> / Tag</div>
-            <a href="#buchen" class="btn btn--primary btn--full">Jetzt buchen</a>
+            <ul class="trailer-card__facts">
+              <li>Kaution 150 € + gültiger Ausweis bei Abholung</li>
+              <li>Lieferung auf Anfrage möglich</li>
+              <li>Auch für Gewerbe geeignet</li>
+            </ul>
+            <div class="trailer-card__price"><strong>60 €</strong> / Tag <span>inkl. Versicherung · mehrere Tage auf Anfrage</span></div>
+            <a href="#buchen" class="btn btn--primary btn--full" data-trailer="1">Jetzt buchen</a>
           </div>
         </div>
 
@@ -172,7 +186,7 @@
               <label for="trailer-select">Anhänger wählen</label>
               <select id="trailer-select" name="trailer" required>
                 <option value="">– bitte wählen –</option>
-                <option value="1">Anhänger 1</option>
+                <option value="1">3-Seitenkipper 3,5 t</option>
                 <option value="2">Anhänger 2</option>
                 <option value="3">Anhänger 3</option>
               </select>

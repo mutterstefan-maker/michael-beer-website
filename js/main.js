@@ -147,6 +147,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderCalendar();
 
+  // ---- Anhänger-Galerie ----
+  document.querySelectorAll('.trailer-card__thumb').forEach(thumb => thumb.addEventListener('click', () => {
+    const card  = thumb.closest('.trailer-card');
+    const photo = card.querySelector('.trailer-card__photo');
+    photo.src = thumb.dataset.src;
+    photo.alt = thumb.dataset.alt;
+    card.querySelectorAll('.trailer-card__thumb').forEach(t => t.classList.toggle('is-active', t === thumb));
+  }));
+
+  // ---- "Jetzt buchen" wählt den Anhänger vor ----
+  document.querySelectorAll('[data-trailer]').forEach(link => link.addEventListener('click', () => {
+    trailerSelect.value = link.dataset.trailer;
+    trailerSelect.dispatchEvent(new Event('change'));
+  }));
+
   // ---- Form submissions (mailto fallback – später durch Backend ersetzen) ----
   function handleForm(formId, successMsg, validate) {
     const form = document.getElementById(formId);
