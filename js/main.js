@@ -2,16 +2,7 @@
 // Michael Beer – main.js
 // =============================================
 
-// AOS Init
 document.addEventListener('DOMContentLoaded', () => {
-  AOS.init({ duration: 700, once: true, offset: 80 });
-
-  // ---- NAV scroll ----
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  });
-
   // ---- Burger menu ----
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -223,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
       div.innerHTML = `
         <div class="success-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h4>${successMsg}</h4>
-        <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-top:6px;">Du bekommst so schnell wie möglich eine Rückmeldung.</p>
+        <p>Du bekommst so schnell wie möglich eine Rückmeldung.</p>
       `;
       form.parentNode.appendChild(div);
     });
