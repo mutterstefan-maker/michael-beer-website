@@ -245,26 +245,6 @@ h3 { font-size: 1.3rem; font-weight: 600; }
 .stat { display: flex; flex-direction: column; }
 .stat strong { color: var(--green-light); font-family: 'Outfit',sans-serif; font-size: 2rem; font-weight: 900; }
 .stat span   { color: rgba(255,255,255,.6); font-size: .85rem; }
-.hero__scroll-hint {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-.hero__scroll-hint span {
-  display: block;
-  width: 2px;
-  height: 48px;
-  background: linear-gradient(to bottom, var(--green-light), transparent);
-  margin: 0 auto;
-  animation: scrollLine 2s ease-in-out infinite;
-}
-@keyframes scrollLine {
-  0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
-}
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
