@@ -162,6 +162,48 @@ document.addEventListener('DOMContentLoaded', () => {
     trailerSelect.dispatchEvent(new Event('change'));
   }));
 
+  // ---- Brennholz: Längen & Preisberechnung ----
+  const WOOD = {
+    weich: { lengths: ['1 m', '50 cm', '33 cm', '25 cm'], price: { srm: 65, ster: 85 } },
+    hart:  { lengths: ['33 cm', '25 cm'],                 price: { srm: 100, ster: 140 } }
+  };
+  const MAX_SRM      = 8;
+  const woodType     = document.getElementById('wood-type');
+  const woodLength   = document.getElementById('wood-length');
+  const woodUnit     = document.getElementById('wood-unit');
+  const woodAmount   = document.getElementById('wood-amount');
+  const woodEstimate = document.getElementById('woodEstimate');
+
+  function updateWoodLengths() {
+    const wood = WOOD[woodType.value];
+    woodLength.innerHTML = wood
+      ? wood.lengths.map(l => `<option value="${l}">${l}</option>`).join('')
+      : '<option value="">– erst Holzsorte wählen –</option>';
+    woodLength.disabled = !wood;
+  }
+
+  function updateWoodEstimate() {
+    const isSrm = woodUnit.value === 'srm';
+    woodAmount.max = isSrm ? MAX_SRM : '';
+    const wood = WOOD[woodType.value];
+    const qty  = Number(woodAmount.value);
+    if (!wood || !(qty > 0)) {
+      woodEstimate.textContent = 'Holzsorte und Menge wählen, um den Preis zu sehen.';
+      return;
+    }
+    const unit = isSrm ? 'SRM' : 'Ster';
+    const sum  = (qty * wood.price[woodUnit.value]).toLocaleString('de-DE');
+    woodEstimate.innerHTML = `Holzpreis: <strong>${sum} €</strong> (${qty.toLocaleString('de-DE')} ${unit}) zzgl. Lieferkosten`;
+  }
+
+  woodType?.addEventListener('change', () => { updateWoodLengths(); updateWoodEstimate(); });
+  [woodUnit, woodAmount].forEach(el => el?.addEventListener('input', updateWoodEstimate));
+
+  document.querySelectorAll('[data-wood]').forEach(link => link.addEventListener('click', () => {
+    woodType.value = link.dataset.wood;
+    woodType.dispatchEvent(new Event('change'));
+  }));
+
   // ---- Form submissions (mailto fallback – später durch Backend ersetzen) ----
   function handleForm(formId, successMsg, validate) {
     const form = document.getElementById(formId);
