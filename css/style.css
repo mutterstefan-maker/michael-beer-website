@@ -143,49 +143,85 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 }
 .nav__mobile .btn { margin-top: 12px; }
 
-/* ---- HERO ---- */
-.hero { padding: 64px 0 72px; border-bottom: 1px solid var(--line); }
-.hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 56px;
-  align-items: center;
+/* ---- INFOLEISTE ---- */
+.topbar { background: var(--ink); color: #D8D2C7; font-size: .9rem; }
+.topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
-.hero__place {
+.topbar a { color: #fff; text-decoration: none; font-weight: 600; }
+
+/* ---- EINSTIEG ---- */
+.entry { padding: 56px 0 72px; }
+.entry__title { font-size: clamp(1.8rem, 3.6vw, 2.6rem); max-width: 18em; }
+.entry__sub { margin: 10px 0 28px; font-size: 1.15rem; color: var(--muted); }
+.entry__choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.choice {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 34px 30px;
+  border-radius: var(--radius);
+  color: #fff;
+  text-decoration: none;
+  transition: background-color .15s;
+}
+.choice--trailer { background: var(--green); }
+.choice--trailer:hover { background: var(--green-dark); }
+.choice--wood { background: var(--wood); }
+.choice--wood:hover { background: var(--wood-dark); }
+.choice:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.choice__label {
+  font-family: var(--font-head);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.choice__price {
+  margin: 6px 0 22px;
+  font-family: var(--font-head);
+  font-size: 1.35rem;
   font-weight: 600;
-  color: var(--green);
+  color: rgba(255,255,255,.92);
+}
+.choice__price small { font-family: var(--font-body); font-size: .95rem; font-weight: 400; color: rgba(255,255,255,.75); }
+.choice__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255,255,255,.3);
   margin-bottom: 14px;
 }
-.hero h1 { margin-bottom: 20px; }
-.hero__sub {
-  font-size: 1.15rem;
-  color: var(--muted);
-  max-width: 34em;
-  margin-bottom: 30px;
-}
-.hero__actions {
+.choice__list > span {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 36px;
-}
-.hero__facts { border-top: 1px solid var(--line); }
-.hero__facts div {
-  display: grid;
-  grid-template-columns: 7.5em 1fr;
-  gap: 12px;
+  align-items: baseline;
+  gap: 8px;
   padding: 10px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  color: rgba(255,255,255,.8);
 }
-.hero__facts dt { font-weight: 700; }
-.hero__facts dd { color: var(--muted); }
-.hero__photo img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius);
+.choice__list b { color: #fff; font-weight: 700; }
+.choice__list i {
+  margin-left: auto;
+  font-style: normal;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
 }
-.hero__photo figcaption { margin-top: 10px; font-size: .9rem; color: var(--muted); }
+.choice__foot { font-size: .92rem; color: rgba(255,255,255,.78); margin-bottom: 24px; }
+.choice__more {
+  margin-top: auto;
+  align-self: flex-start;
+  font-weight: 700;
+  padding-bottom: 2px;
+  border-bottom: 2px solid rgba(255,255,255,.6);
+}
+.choice:hover .choice__more { border-bottom-color: #fff; }
 
 /* ---- SECTIONS ---- */
 .section { padding: 88px 0; }
@@ -516,7 +552,6 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 960px) {
-  .hero__inner    { grid-template-columns: 1fr; gap: 36px; }
   .booking-layout { grid-template-columns: 1fr; }
   .contact-grid   { grid-template-columns: 1fr; gap: 36px; }
 }
@@ -527,7 +562,10 @@ h3 { font-size: 1.25rem; font-weight: 600; }
   .nav__mobile.open { display: flex; }
 
   .section        { padding: 64px 0; }
-  .hero           { padding: 40px 0 56px; }
+  .entry          { padding: 36px 0 56px; }
+  .entry__choices { grid-template-columns: 1fr; gap: 16px; }
+  .choice         { padding: 24px 22px; }
+  .topbar__inner  { flex-direction: column; gap: 0; text-align: center; }
   .trailer-grid,
   .wood-grid,
   .steps          { grid-template-columns: 1fr; }
@@ -541,5 +579,5 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 
 @media (max-width: 480px) {
   .trailer-specs { grid-template-columns: 1fr; }
-  .hero__facts div { grid-template-columns: 1fr; gap: 0; }
+  .choice__list > span { flex-wrap: wrap; column-gap: 6px; row-gap: 0; }
 }
