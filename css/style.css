@@ -360,10 +360,6 @@ h3 { font-size: 1.25rem; font-weight: 600; }
   grid-template-columns: 1.15fr 1fr;
   gap: 32px;
   align-items: start;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 36px;
 }
 .booking-layout__col { display: flex; flex-direction: column; gap: 18px; }
 .booking-summary {
@@ -454,11 +450,10 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .wood-prices dd { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; color: var(--wood); white-space: nowrap; }
 .wood-card .btn { margin-top: auto; }
 #holz .terms { border-left-color: var(--wood); }
-#holz-bestellen { max-width: 760px; margin: 48px auto 0; }
-#holz-bestellen h3 { font-size: 1.5rem; margin-bottom: 22px; }
-#holz-bestellen .form-group input:focus,
-#holz-bestellen .form-group select:focus,
-#holz-bestellen .form-group textarea:focus { outline-color: var(--wood); border-color: var(--wood); }
+.modal--wood .form-group input:focus,
+.modal--wood .form-group select:focus,
+.modal--wood .form-group textarea:focus { outline-color: var(--wood); border-color: var(--wood); }
+.modal--wood .modal__eyebrow { color: var(--wood); }
 .wood-estimate {
   background: var(--wood-soft);
   border-radius: var(--radius);
@@ -542,6 +537,71 @@ h3 { font-size: 1.25rem; font-weight: 600; }
 .form-success h4 { font-family: var(--font-head); font-size: 1.3rem; margin-bottom: 6px; }
 .form-success p { color: var(--muted); }
 
+/* ---- FENSTER (BUCHUNG / BESTELLUNG) ---- */
+.modal {
+  width: min(1000px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+}
+.modal--narrow { width: min(720px, calc(100% - 32px)); }
+.modal::backdrop { background: rgba(31,29,26,.6); }
+body:has(.modal[open]) { overflow: hidden; }
+.modal__head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 28px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.modal__eyebrow {
+  font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--green);
+}
+.modal__title { font-size: clamp(1.3rem, 2.4vw, 1.7rem); }
+.modal__close {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; flex-shrink: 0;
+  font-size: 1.3rem; color: var(--ink);
+  background: none; border: 1px solid var(--line); border-radius: var(--radius);
+  cursor: pointer;
+}
+.modal__close:hover { border-color: var(--ink); }
+.modal__body { padding: 24px 28px 28px; }
+
+/* ---- SCHNELLKONTAKT ---- */
+.quick-contact {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90;
+  display: flex;
+}
+.quick-contact a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.quick-contact .icon { font-size: 1.25rem; }
+.quick-contact__wa { background: #1F8F4E; }
+.quick-contact__wa:hover { background: #18733E; }
+.quick-contact__call { display: none !important; background: var(--ink); }
+
 /* ---- RECHTLICHES ---- */
 .legal-page { padding: 56px 24px 88px; max-width: 760px; }
 .legal-page h1 { margin-bottom: 28px; }
@@ -570,11 +630,21 @@ h3 { font-size: 1.25rem; font-weight: 600; }
   .wood-grid,
   .steps          { grid-template-columns: 1fr; }
   .form-row--2    { flex-direction: column; }
-  .panel,
-  .booking-layout { padding: 22px; }
+  .panel          { padding: 22px; }
   .trailer-card__body, .wood-card { padding: 22px; }
   .calendar       { padding: 10px; }
   .calendar__day  { height: 40px; font-size: .9rem; }
+
+  .modal,
+  .modal--narrow  { width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; border-radius: 0; }
+  .modal__head    { padding: 14px 18px 12px; }
+  .modal__body    { padding: 18px; }
+
+  /* Schnellkontakt als feste Leiste unten – die Seite bekommt darunter Platz */
+  body { padding-bottom: calc(54px + env(safe-area-inset-bottom)); }
+  .quick-contact  { left: 0; right: 0; bottom: 0; padding-bottom: env(safe-area-inset-bottom); background: var(--ink); }
+  .quick-contact a { flex: 1; justify-content: center; height: 54px; padding: 0 12px; border-radius: 0; box-shadow: none; }
+  .quick-contact__call { display: flex !important; }
 }
 
 @media (max-width: 480px) {

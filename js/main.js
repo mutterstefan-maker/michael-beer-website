@@ -147,10 +147,30 @@ document.addEventListener('DOMContentLoaded', () => {
     card.querySelectorAll('.trailer-card__thumb').forEach(t => t.classList.toggle('is-active', t === thumb));
   }));
 
-  // ---- "Jetzt buchen" wählt den Anhänger vor ----
-  document.querySelectorAll('[data-trailer]').forEach(link => link.addEventListener('click', () => {
-    trailerSelect.value = link.dataset.trailer;
+  // ---- Buchungs- und Bestellfenster ----
+  const bookingDialog = document.getElementById('bookingDialog');
+  const woodDialog    = document.getElementById('woodDialog');
+  const bookingTitle  = document.getElementById('bookingTitle');
+  const calTrailer    = document.getElementById('calTrailer');
+
+  document.querySelectorAll('dialog.modal').forEach(dialog => {
+    dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
+    // Klick auf den abgedunkelten Hintergrund schließt das Fenster
+    dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  });
+
+  function updateTrailerName() {
+    const opt  = trailerSelect.options[trailerSelect.selectedIndex];
+    const name = trailerSelect.value ? opt.text : 'Anhänger';
+    bookingTitle.textContent = `${name} buchen`;
+    calTrailer.textContent   = trailerSelect.value ? opt.text : 'den gewählten Anhänger';
+  }
+  trailerSelect.addEventListener('change', updateTrailerName);
+
+  document.querySelectorAll('[data-book]').forEach(btn => btn.addEventListener('click', () => {
+    trailerSelect.value = btn.dataset.book;
     trailerSelect.dispatchEvent(new Event('change'));
+    bookingDialog.showModal();
   }));
 
   // ---- Brennholz: Längen & Preisberechnung ----
@@ -190,9 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
   woodType?.addEventListener('change', () => { updateWoodLengths(); updateWoodEstimate(); });
   [woodUnit, woodAmount].forEach(el => el?.addEventListener('input', updateWoodEstimate));
 
-  document.querySelectorAll('[data-wood]').forEach(link => link.addEventListener('click', () => {
-    woodType.value = link.dataset.wood;
+  document.querySelectorAll('[data-order]').forEach(btn => btn.addEventListener('click', () => {
+    woodType.value = btn.dataset.order;
     woodType.dispatchEvent(new Event('change'));
+    woodDialog.showModal();
   }));
 
   // ---- Form submissions (mailto fallback – später durch Backend ersetzen) ----
